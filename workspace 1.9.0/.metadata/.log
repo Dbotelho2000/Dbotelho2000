@@ -1,0 +1,18 @@
+!SESSION 2022-03-18 10:46:32.329 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-03-18 10:47:30.381
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-03-18 10:47:30.574
+!MESSAGE Log4j initialized with config file C:\Users\Daniel\Documents\GitHub\Dbotelho2000\workspace 1.9.0\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-03-18 10:47:45.101
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-03-18 10:57:28.966
+!MESSAGE Indexed 'dtADCSimple' (22 sources, 83 headers) in 4.63 sec: 4,307 declarations; 17,929 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.009%)
