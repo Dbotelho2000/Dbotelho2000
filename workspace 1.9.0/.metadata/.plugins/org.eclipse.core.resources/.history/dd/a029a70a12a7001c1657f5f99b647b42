@@ -1,0 +1,106 @@
+/*
+ * display_driver.c
+ *
+ *  Created on: Mar 18, 2022
+ *      Author: Daniel
+ */
+
+#include "display_driver.h"
+
+void D_UpdateDisp(uint8_t dispNum, uint8_t dispSelect){
+
+	if(dispNum < 15){
+
+		switch(dispNum){
+
+		case 1:
+
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
+
+			break;
+
+		case 2:
+
+			break;
+
+		case 3:
+
+			break;
+
+		case 4:
+
+			break;
+
+		case 5:
+
+			break;
+
+		case 6:
+
+			break;
+
+		case 7:
+
+			break;
+
+		case 8:
+
+			break;
+
+		case 9:
+
+			break;
+
+		case 10:
+
+			break;
+
+		case 11:
+
+			break;
+
+		case 12:
+
+			break;
+
+		case 13:
+
+			break;
+
+		case 14:
+
+			break;
+
+		case 15:
+
+			break;
+
+		default:
+
+		}
+
+		if(dispSelect){
+
+			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_RESET);
+
+		}else{
+
+			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_SET);
+
+		}
+
+	}else{
+
+		Error_Handler();
+
+	}
+}

@@ -1,0 +1,10 @@
+21:49:14 **** Incremental Build of configuration Debug for project dtADCSimple ****
+make -j6 all 
+arm-none-eabi-size   dtADCSimple.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18740	     20	   1916	  20676	   50c4	dtADCSimple.elf
+Finished building: default.size.stdout
+ 
+
+21:49:14 Build Finished. 0 errors, 0 warnings. (took 273ms)
+

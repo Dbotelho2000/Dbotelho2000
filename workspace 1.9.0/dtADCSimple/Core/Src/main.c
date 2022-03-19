@@ -18,6 +18,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
+#include "dma.h"
+#include "usart.h"
+#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -41,6 +45,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+__IO int Userbutton = 0;
+__IO int i = 0;
+__IO uint16_t ADCdata[2];
 
 /* USER CODE END PV */
 
@@ -82,7 +89,19 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
+  MX_DMA_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
+
+  if(HAL_ADCEx_Calibration_Start(&hadc1) != HAL_OK){
+	  Error_Handler();
+  }
+
+  if(HAL_ADC_Start_DMA(&hadc1, (uint32_t *)ADCdata, (uint32_t)2) != HAL_OK){
+	  Error_Handler();
+  }
 
   /* USER CODE END 2 */
 
@@ -90,10 +109,29 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+	while(!Userbutton){
+		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_4);
+		HAL_Delay(100);
+	}
+
+	HAL_Delay(100);
+
+	Userbutton = 0;
+
+	/*for(i = 0; i<=1; i++){
+		ADCdata[i] = 0x00;
+	}
+
+	if(HAL_ADC_Start(&hadc1) != HAL_OK){
+		Error_Handler();
+	}*/
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
+
   /* USER CODE END 3 */
 }
 
@@ -138,7 +176,18 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)
+{
+  if(GPIO_Pin == GPIO_PIN_4){
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+	  Userbutton = 1;
+  }
+}
 
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+}
 /* USER CODE END 4 */
 
 /**
@@ -152,6 +201,7 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
   }
   /* USER CODE END Error_Handler_Debug */
 }
