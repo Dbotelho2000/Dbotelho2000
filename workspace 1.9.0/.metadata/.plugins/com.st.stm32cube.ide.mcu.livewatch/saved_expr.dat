@@ -1,2 +1,8 @@
-ADCdata
-ADchannel
+stateM
+rxBuffer
+UARTSTATUS
+amplitude
+offset
+pontos
+sinBuffer
+frequencia

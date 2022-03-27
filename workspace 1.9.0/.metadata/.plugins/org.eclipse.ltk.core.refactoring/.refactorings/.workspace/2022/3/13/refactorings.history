@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;TIM_PWMOutput&apos;" deleteContents="false" description="Delete resource &apos;TIM_PWMOutput&apos;" element1="/TIM_PWMOutput" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1648244905681"/>&#x0A;<refactoring comment="Delete resource &apos;DAC_TR_PULL&apos;" deleteContents="true" description="Delete resource &apos;DAC_TR_PULL&apos;" element1="/DAC_TR_PULL" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1648255995574"/>
+</session>

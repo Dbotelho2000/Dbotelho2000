@@ -9,6 +9,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Daniel\Documents\GitHub\STM32CubeG0\Projects\NUCLEO-G070RB\Examples\TIM\TIM_PWMOutput"/>
 			<item value="C:\Users\Daniel\Documents\GitHub\Dbotelho2000\workspace 1.9.0"/>
 		</list>
 	</section>

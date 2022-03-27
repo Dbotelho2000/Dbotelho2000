@@ -1,0 +1,17 @@
+22:56:41 **** Incremental Build of configuration Debug for project TIM_PWM_TT ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TIM_PWM_TT.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\Daniel\Documents\GitHub\Dbotelho2000\workspace 1.9.0\TIM_PWM_TT\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TIM_PWM_TT.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TIM_PWM_TT.elf
+ 
+arm-none-eabi-size   TIM_PWM_TT.elf 
+arm-none-eabi-objdump -h -S  TIM_PWM_TT.elf  > "TIM_PWM_TT.list"
+   text	   data	    bss	    dec	    hex	filename
+  38332	    124	   1924	  40380	   9dbc	TIM_PWM_TT.elf
+Finished building: default.size.stdout
+ 
+Finished building: TIM_PWM_TT.list
+ 
+
+22:56:42 Build Finished. 0 errors, 0 warnings. (took 1s.20ms)
+
